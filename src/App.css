@@ -36,3 +36,84 @@
     transform: rotate(360deg);
   }
 }
+body {
+  height: 100vh;
+  background-color: #04D9D9
+}
+
+header {
+  height: 10vh;
+  width: 100%;
+  background-color: #400101;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header > div {
+  height: 100%;
+  width: 80%;
+  color: #04C4D9;
+  font-size: 2rem;
+  font-weight: 200;
+  text-align: center;
+}
+
+.main {
+  width: 80%;
+  height: 90vh;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container {
+  width: 80%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: #A60A0A;
+  margin: 10px;
+}
+
+.form-container > form {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form > input {
+  width: 60%;
+}
+
+button {
+  background-color: #04C4D9;
+  color: #400101;
+  font-size: .5rem;
+  margin: 5px;
+  padding: 5px;
+}
+
+.todo {
+  width: 80%;
+  height: 50px;
+  background-color: #A60A0A;
+  color: #04C4D9;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.todo-task {
+  margin-left: 10px;
+}
+
+.complete {
+  text-decoration: line-through;
+}
