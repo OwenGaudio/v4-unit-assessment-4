@@ -1,69 +1,68 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import Todo from './Todo.js';
+import Recipe from './Recipe.js';
 import Form from './Form.js';
 
 class Main extends Component {
     constructor(){
         super();
         this.state = {
-            todos: []
+            recipes: []
         }
-        this.getTodos = this.getTodos.bind(this)
+        this.getRecipes = this.getRecipes.bind(this)
     }
 
     componentDidMount(){
-        this.getTodos();
+        this.getRecipes();
     }
 
-    getTodos = () => {
-        axios.get('/api/todos')
+    getRecipes = () => {
+        axios.get('/api/recipes')
         .then( res => {
             this.setState({
-                todos: res.data
+                recipes: res.data
             })
         }).catch( err => console.log(err))
     }
 
-    addTodo = task => {
-        axios.post('/api/todos', {task})
+    addRecipe = text => {
+        axios.post('/api/recipes', {text})
         .then(res => {
             this.setState({
-                todos: res.data
+                recipes: res.data
             })
         }).catch( err => console.log(err))
     }
 
-    completeTodo = id => {
-        axios.put(`/api/todos/${id}`)
+    completeRecipe = id => {
+        axios.put(`/api/recipes/${id}`)
         .then( res => {
             this.setState({
-                todos: res.data
+                recipes: res.data
             })
         }).catch(err => console.log(err))
     }
 
-    deleteTodo = id => {
-        axios.delete(`/api/todos/${id}`)
+    deleteRecipe = id => {
+        axios.delete(`/api/recipes/${id}`)
         .then( res => {
             this.setState({
-                todos: res.data
+                recipes: res.data
             })
         }).catch(err => console.log(err))
     }
 
     render(){
-        console.log(this.state.todos)
-        const mappedTodos = this.state.todos.map( todo => {
-            return <Todo 
-                key={todo.id} 
-                todo={todo}
-                completeTodo={this.completeTodo}
-                deleteTodo={this.deleteTodo}/>
+        const mappedRecipes = this.state.recipes.map( recipe => {
+            return <Recipe
+                key={recipe.id} 
+                recipe={recipe}
+                completeRecipe={this.completeRecipe}
+                deleteRecipe={this.deleteRecipe}/>
         })
         return <div className="main">
-            <Form addTodo={this.addTodo}/>
-            {mappedTodos}
+            <Form addRecipe={this.addRecipe}/>
+            {mappedRecipes}
         </div>
     }
 }

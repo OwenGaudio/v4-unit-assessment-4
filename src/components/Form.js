@@ -4,21 +4,21 @@ class Form extends Component {
     constructor(){
         super();
         this.state = {
-            task: ''
+            text: ''
         }
     }
 
     handleChange = e => {
         this.setState({
-            task: e.target.value
+            text: e.target.value
         })
     }
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.addTodo(this.state.task);
+        this.props.addRecipe(this.state.text);
         this.setState({
-            task: ''
+            text: ''
         })
     }
 
@@ -27,7 +27,7 @@ class Form extends Component {
             <form onSubmit={(e) => this.handleSubmit(e)}>
                 <input
                     onChange={e => this.handleChange(e)} 
-                    value={this.state.task} 
+                    value={this.state.text} 
                     placeholder="Add new Recipe here..." 
                     type="text"/>
                 <button type="submit">Create Recipe</button>

@@ -97,7 +97,7 @@ button {
   padding: 5px;
 }
 
-.todo {
+.recipe {
   width: 80%;
   height: 50px;
   background-color: #A60A0A;
@@ -110,7 +110,7 @@ button {
   border-radius: 10px;
 }
 
-.todo-task {
+.recipe-text {
   margin-left: 10px;
 }
 
