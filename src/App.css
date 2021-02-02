@@ -116,10 +116,20 @@ button {
   border-radius: 10px;
 }
 
-.recipe-text {
-  margin-left: 10px;
+.cooked {
+  width: 80%;
+  height: 50px;
+  background-color: #400101;
+  color: #04C4D9;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
-.cooked {
-  text-decoration: line-through;
+.recipe-text {
+  margin-left: 10px;
+  font-weight: normal;
 }
