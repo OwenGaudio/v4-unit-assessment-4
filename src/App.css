@@ -59,6 +59,11 @@ header > div {
   text-align: center;
 }
 
+h2{
+  font-style: italic;
+  font-size: 1rem;
+}
+
 .main {
   width: 80%;
   height: 90vh;
@@ -95,6 +100,7 @@ button {
   font-size: .5rem;
   margin: 5px;
   padding: 5px;
+  border-radius: 5px;
 }
 
 .recipe {
@@ -114,6 +120,6 @@ button {
   margin-left: 10px;
 }
 
-.complete {
+.cooked {
   text-decoration: line-through;
 }

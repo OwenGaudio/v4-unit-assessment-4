@@ -8,14 +8,14 @@ module.exports = {
     },
     addRecipe: (req, res) => {
         const {text} = req.body;
-        const newRecipe = {id, text, complete: false};
+        const newRecipe = {id, text, cooked: false};
         recipes.push(newRecipe);
         id++;
         res.status(200).send(recipes);
     },
-    completeRecipe: (req, res) => {
+    cookedRecipe: (req, res) => {
         const i = recipes.findIndex( recipe => recipe.id === +req.params.id);
-        recipes[i].complete = !recipes[i].complete;
+        recipes[i].cooked = !recipes[i].cooked;
         res.status(200).send(recipes);
     },
     deleteRecipe: (req, res) => {

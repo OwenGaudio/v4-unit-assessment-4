@@ -34,7 +34,7 @@ class Main extends Component {
         }).catch( err => console.log(err))
     }
 
-    completeRecipe = id => {
+    cookedRecipe = id => {
         axios.put(`/api/recipes/${id}`)
         .then( res => {
             this.setState({
@@ -57,7 +57,7 @@ class Main extends Component {
             return <Recipe
                 key={recipe.id} 
                 recipe={recipe}
-                completeRecipe={this.completeRecipe}
+                cookedRecipe={this.cookedRecipe}
                 deleteRecipe={this.deleteRecipe}/>
         })
         return <div className="main">

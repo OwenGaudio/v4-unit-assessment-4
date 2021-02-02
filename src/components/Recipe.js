@@ -2,10 +2,10 @@ import React from 'react';
 
 const Recipe = props => {
     return <div className="recipe">
-        <div className={!props.recipe.complete ? 'recipe-text' : 'recipe-text complete'}>{props.recipe.text}</div>
+        <div className={!props.recipe.cooked ? 'recipe-text' : 'recipe-text cooked'}>{props.recipe.text}</div>
         <div className="btn-container">
-            <button onClick={() => props.completeRecipe(props.recipe.id)}>{!props.recipe.complete ? 'Edit' : 'Done'}</button>
-            <button onClick={() => props.deleteRecipe(props.recipe.id)}>X</button>
+            <button onClick={() => props.cookedRecipe(props.recipe.id)}>{!props.recipe.cooked ? 'Cook Meal' : "Haven't made in a while"}</button>
+            <button onClick={() => props.deleteRecipe(props.recipe.id)}>Delete</button>
         </div>
     </div>
 }
